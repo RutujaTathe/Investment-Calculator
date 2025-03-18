@@ -14,7 +14,10 @@ import { InvestmentServiceService } from 'src/app/Service/investment-service.ser
   styleUrls: ['./user-input.component.scss'],
 })
 export class UserInputComponent {
-  constructor(private investmentService:InvestmentServiceService) {}
+  constructor(
+    private investmentService: InvestmentServiceService,
+    private router: Router
+  ) {}
   enterInitialInvestment = '0';
   enterAnnualInvestment = '0';
   enterExpectedReturn = '5';
@@ -22,12 +25,13 @@ export class UserInputComponent {
   // enterDuration = signal('10');
 
   onSubmit() {
+    this.router.navigate(['calculate']);
     this.investmentService.calculateInvestmentResults({
       initialInvestment: +this.enterInitialInvestment,
       // initialInvestment: +this.enterInitialInvestment(),
       duration: +this.enterDuration,
       expectedReturn: +this.enterExpectedReturn,
       annualInvestment: +this.enterAnnualInvestment,
-    })
+    });
   }
 }

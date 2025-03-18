@@ -5,21 +5,19 @@ import { CalculatedInvestmentComponent } from '../Components/calculated-investme
 import { UserInputComponent } from '../Components/user-input/user-input.component';
 
 const routes: Routes = [
-  {path:'calculate',component:CalculatedInvestmentComponent},
+  { path: 'calculate', component: CalculatedInvestmentComponent },
+
   {
-    path:'',pathMatch:'full',component:UserInputComponent,
-    
+    path: 'user-input',
+    component: UserInputComponent,
   },
-  {
-    path:'',component:UserInputComponent
-  },
-  {
-    path:'**',component:UserInputComponent
-  }
+
+  { path: '', redirectTo: 'user-input', pathMatch: 'full' },
+  { path: '**', redirectTo: 'user-input' },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RoutingRoutingModule { }
+export class RoutingRoutingModule {}
