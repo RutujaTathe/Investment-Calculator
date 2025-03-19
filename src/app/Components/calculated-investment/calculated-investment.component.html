@@ -1,28 +1,37 @@
-<table *ngIf="results && results.length > 0; else noData">
-    <thead>
-      <tr>
-        <th>Year</th>
-        <th>Investment Value</th>
-        <th>Interest (Year)</th>
-        <th>Total Interest</th>
-        <th>Invested Capital</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let result of results">
-        <td>{{ result.year }}</td>
-        <td>{{ result.valueEndOfYear | currency }}</td>
-        <td>{{ result.interest | currency }}</td>
-        <td>{{ result.totalInterest | currency }}</td>
-        <td>{{ result.totalAmountInvested | currency }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <ng-template #noData>
-    <p class="center">
-      Please enter some values and press "Calculate."
-    </p>
-  </ng-template>
-  
- 
+<table *ngIf="results && results.length > 0; else noData" class="styled-table">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of results">
+      <td>{{ result.year }}</td>
+      <td>{{ result.valueEndOfYear | currency }}</td>
+      <td>{{ result.interest | currency }}</td>
+      <td>{{ result.totalInterest | currency }}</td>
+      <td>{{ result.totalAmountInvested | currency }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="paginator-container" *ngIf="results && results.length > 0">
+  <mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    [pageIndex]="pageIndex"
+    [showFirstLastButtons]="showFirstLastButtons"
+    aria-label="Select page"
+    (page)="onPageEvent($event)"
+  >
+  </mat-paginator>
+</div>
+
+<ng-template #noData>
+  <p class="center">Please enter some values and press "Calculate."</p>
+</ng-template>

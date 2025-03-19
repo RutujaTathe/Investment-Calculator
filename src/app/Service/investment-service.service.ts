@@ -1,21 +1,18 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { InvestmentInput, InvestmentResultInterface } from '../Components/calculated-investment/investment-input.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InvestmentServiceService {
-  resultData?:InvestmentResultInterface[]=[];
-  // resultData?=signal<InvestmentResultInterface |undefined>(undefined)
-  
-  constructor() { }
-  calculateInvestmentResults(data: InvestmentInput) {
-    const { initialInvestment, duration, expectedReturn, annualInvestment } =
-      data;
+  resultData: InvestmentResultInterface[] = [];
 
-    const annualData= [
-      
-    ];
+  constructor() {}
+
+  calculateInvestmentResults(data: InvestmentInput) {
+    const { initialInvestment, duration, expectedReturn, annualInvestment } = data;
+    const annualData = [];
+
     let investmentValue = initialInvestment;
 
     for (let i = 0; i < duration; i++) {
@@ -26,14 +23,14 @@ export class InvestmentServiceService {
       const totalInterest =
         investmentValue - annualInvestment * year - initialInvestment;
       annualData.push({
-        year: year,
+        year,
         interest: interestEarnedInYear,
         valueEndOfYear: investmentValue,
-        annualInvestment: annualInvestment,
-        totalInterest: totalInterest,
+        annualInvestment,
+        totalInterest,
         totalAmountInvested: initialInvestment + annualInvestment * year,
       });
-      this.resultData=annualData;
     }
+    this.resultData = annualData;
   }
 }
