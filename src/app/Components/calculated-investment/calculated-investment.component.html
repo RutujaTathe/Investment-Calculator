@@ -18,7 +18,11 @@
     </tr>
   </tbody>
 </table>
-
+<div class="action">
+  <button mat-icon-button (click)="downloadResults()">
+    <mat-icon>download</mat-icon>
+  </button>
+</div>
 <div class="paginator-container" *ngIf="results && results.length > 0">
   <mat-paginator
     [length]="length"
