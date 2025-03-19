@@ -1,47 +1,67 @@
-  <form (ngSubmit)="onSubmit()">
-    <div class="input-group">
-      <p>
-        <label for="initial-investment">Initial Investment </label>
-        <input
-          id="initial-investment"
-          name="initial-investment"
-          type="number"
-          [(ngModel)]="enterInitialInvestment"
-        />
-      </p>
-      <p>
-        <label for="annual-investment">Annual Investment </label>
-        <input
-          id="annual-investment"
-          name="annual-investment"
-          type="number"
-          [(ngModel)]="enterAnnualInvestment"
-        />
-      </p>
-    </div>
+<div class="container">
+  <div class="form-section">
+    <form (ngSubmit)="onSubmit()">
+      <div class="group">
+        <p>
+          <label for="initial-investment">Initial Investment </label>
+          <input
+            id="initial-investment"
+            name="initial-investment"
+            type="number"
+            [(ngModel)]="enterInitialInvestment"
+          />
+        </p>
+      </div>
+      <div class="group">
+        <p>
+          <label for="annual-investment">Annual Investment </label>
+          <input
+            id="annual-investment"
+            name="annual-investment"
+            type="number"
+            [(ngModel)]="enterAnnualInvestment"
+          />
+        </p>
+      </div>
+      <div class="group">
+        <p>
+          <label for="expected-return">Expected Return </label>
+          <input
+            id="expected-return"
+            name="expected-return"
+            type="number"
+            [(ngModel)]="enterExpectedReturn"
+          />
+        </p>
+      </div>
+      <div class="group">
+        <p>
+          <label for="duration">Duration</label>
+          <input
+            id="duration"
+            name="duration"
+            type="number"
+            [(ngModel)]="enterDuration"
+          />
+        </p>
+      </div>
+      <div class="input-group">
+        <button type="button" (click)="onReset()">Reset</button>
+        <button type="submit">Calculate</button>
+      </div>
+    </form>
+    <button type="button" (click)="loadExampleData()" class="text-button">
+      <span> Load Example Data </span>
+    </button>
+  </div>
 
-    <div class="input-group">
-      <p>
-        <label for="expected-return">Expected Return </label>
-        <input
-          id="expected-return"
-          name="expected-return"
-          type="number"
-          [(ngModel)]="enterExpectedReturn"
-        />
-      </p>
-      <p>
-        <label for="duration">Duration</label>
-        <input
-          id="duration"
-          name="duration"
-          type="number"
-          [(ngModel)]="enterDuration"
-        />
-      </p>
+  <div class="faq-section">
+    <div class="faq">
+      <h3>FAQs</h3>
+      <div *ngFor="let faq of faqs">
+        <button (click)="faq.open = !faq.open">{{ faq.question }}</button>
+        <p *ngIf="faq.open">{{ faq.answer }}</p>
+      </div>
     </div>
-    <p>
-      <button type="submit">Calculate</button>
-    </p>
-  </form>
-
+  </div>
+</div>
