@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import type { InvestmentInput } from '../calculated-investment/investment-input.model';
 import { InvestmentServiceService } from 'src/app/Service/investment-service.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-
 @Component({
   selector: 'app-user-input',
   standalone: true,
@@ -25,7 +24,7 @@ export class UserInputComponent {
   enterExpectedReturn = '5';
   enterDuration = '10';
   // enterDuration = signal('10');
-  isLoading = false;
+  showSnackbar: boolean = false;
 
   faqs = [
     {
@@ -76,14 +75,19 @@ export class UserInputComponent {
       annualInvestment: +this.enterAnnualInvestment,
     });
   }
+
   onReset() {
-    this.snackBar.open('All input has been Reset ! please wait...', 'Close', {
-      duration: 4000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom',
-      panelClass: ['success-snackbar'],
-    });
+    this.enterInitialInvestment = '';
+    this.enterAnnualInvestment = '';
+    this.enterExpectedReturn = '';
+    this.enterDuration = '';
+
+    this.showSnackbar = true;
+    setTimeout(() => {
+      this.showSnackbar = false;
+    }, 3000);
   }
+
   loadExampleData() {
     this.enterInitialInvestment = '10000';
     this.enterAnnualInvestment = '5000';

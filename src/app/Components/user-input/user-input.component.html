@@ -45,6 +45,7 @@
           />
         </p>
       </div>
+    
       <div class="input-group">
         <button type="button" (click)="onReset()">Reset</button>
         <button type="submit">Calculate</button>
@@ -53,6 +54,9 @@
     <button type="button" (click)="loadExampleData()" class="text-button">
       <span> Load Example Data </span>
     </button>
+    <div *ngIf="showSnackbar" class="success-snackbar">
+      Form reset successfully!
+    </div>
   </div>
 
   <div class="faq-section">
