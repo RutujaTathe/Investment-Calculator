@@ -1,27 +1,12 @@
-# InvestmentCalculatorProject
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Screenshot (60)](https://github.com/user-attachments/assets/db1f6d00-689e-4010-9458-527f07b3b826)
+![Screenshot (61)](https://github.com/user-attachments/assets/badd96d2-4357-4c29-b265-2c13177ad46a)
+![Screenshot (62)](https://github.com/user-attachments/assets/94886e8a-dd4e-4040-a72a-a58967bdecdc)
+![Screenshot (63)](https://github.com/user-attachments/assets/e0094ff9-6bf5-49b1-8572-e3b5bde5a6b5)
+![Screenshot (64)](https://github.com/user-attachments/assets/faf88ae5-4c75-4a84-97a0-93ee4b852a26)
+![Screenshot (65)](https://github.com/user-attachments/assets/64fa0ecf-a851-404e-849f-f0f697ab198a)
+![Screenshot (66)](https://github.com/user-attachments/assets/e159efd2-7d5c-46d4-8f28-ceeed488130d)
+![Screenshot (67)](https://github.com/user-attachments/assets/76daa1fc-7dac-472d-a874-082104d0a201)
+![Screenshot (68)](https://github.com/user-attachments/assets/c4cd679d-de79-4f18-8dca-1c36453aa033)
+![Screenshot (69)](https://github.com/user-attachments/assets/20acdfd1-8691-472f-9794-4874445e22e7)
+![Screenshot (70)](https://github.com/user-attachments/assets/83cce5ac-260f-4b38-a656-3211b71bb6d2)
+![Screenshot (71)](https://github.com/user-attachments/assets/a2eb3b66-891b-4727-b961-cddec185c595)
